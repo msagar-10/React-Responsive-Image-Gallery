@@ -45,6 +45,7 @@ const App = () => {
     const updatedCards = cards.filter((card) => !card.checked);
     setCards(updatedCards);
   };
+  
   const selectedCount = cards.filter((card) => card.checked).length;
 
   //  Image Upload Function
