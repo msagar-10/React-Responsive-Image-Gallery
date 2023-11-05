@@ -1,0 +1,393 @@
+/*============================================================================================
+	Image Gallery CSS
+==============================================================================================*/
+body {
+  background: #edf2f7;
+  font-family: "Poppins", sans-serif;
+}
+.gallery-widget {
+  max-width: 876px;
+  margin: auto;
+}
+.gallery-widget-container {
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 2px 2px 0 rgba(32, 38, 46, 0.08);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gallery-widget-head {
+  border-bottom: 1px solid #cacaca;
+  padding: 32px 32px 24px 32px;
+}
+.gallery-widget-head h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.gallery-head-selected-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gallery-head-selected-info h2 {
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.gallery-head-selected-info h2 img {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+}
+.gallery-head-selected-info button {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.4s ease;
+  font-weight: 500;
+  background: #ff000012;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.gallery-head-selected-info button:hover {
+  background: red;
+  color: #fff;
+}
+.gallery-widget-inner {
+  padding: 32px;
+}
+.gallery-widget-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 24px;
+  grid-template-areas:
+    "box1 box1 box2 box3 box4"
+    "box1 box1 box5 box6 box7"
+    "box8 box9 box10 box11 box12";
+}
+.single-image-widget {
+  width: 140px;
+  height: 140px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1.5px solid #cacaca;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.single-image-widget img {
+  width: 140px;
+  height: 140px;
+  border-radius: 4px;
+}
+.single-image-widget::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #0000006b;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.single-image-widget:hover::before,
+.single-image-widget:hover .selected-input {
+  opacity: 1;
+  visibility: visible;
+}
+.box1 {
+  grid-area: box1;
+  width: 308px;
+  height: 308px;
+}
+.box1 img {
+  width: 308px;
+  height: 308px;
+}
+.box2 {
+  grid-area: box2;
+}
+.box3 {
+  grid-area: box3;
+}
+.box4 {
+  grid-area: box4;
+}
+.box5 {
+  grid-area: box5;
+}
+.box6 {
+  grid-area: box6;
+}
+.box7 {
+  grid-area: box7;
+}
+.box8 {
+  grid-area: box8;
+}
+.box9 {
+  grid-area: box9;
+}
+.box10 {
+  grid-area: box10;
+}
+.box11 {
+  grid-area: box11;
+}
+.box12 {
+  grid-area: box12;
+}
+.selected-input {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.selected-input input {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  cursor: pointer;
+}
+.gallery-widget-inner-top {
+  display: flex;
+  gap: 24px;
+}
+.single-image-widget.featured-widget.box1 {
+  width: 308px;
+  height: 308px;
+}
+.single-image-widget.featured-widget.box1 img {
+  width: 308px;
+  height: 308px;
+}
+
+.single-image-widget.selected::before,
+.single-image-widget.selected .selected-input {
+  opacity: 1;
+  visibility: visible;
+  background: #dddddd73;
+}
+
+/* Upload Image Box CSS */
+.add-image-box {
+  width: 138px;
+  height: 138px;
+  border: 2px dashed #cacaca;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.add-image-box:hover {
+  background: #eaeaea;
+}
+.add-image-box-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.add-image-box img {
+  width: 24px;
+  height: 24px;
+}
+.add-image-box p {
+  margin: 0;
+  margin-top: 8px;
+}
+
+/* Responsive CSS */
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  .gallery-widget-group {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: initial;
+    gap: 12px;
+    grid-template-areas: initial;
+  }
+  .box1 {
+    grid-area: initial;
+    width: 120px;
+    height: 120px;
+  }
+  .box1 img {
+    width: 120px;
+    height: 120px;
+  }
+  .box2 {
+    grid-area: initial;
+  }
+  .single-image-widget {
+    width: 120px;
+    height: 120px;
+  }
+  .box3 {
+    grid-area: initial;
+  }
+  .box4 {
+    grid-area: initial;
+  }
+  .box5 {
+    grid-area: initial;
+  }
+  .box6 {
+    grid-area: initial;
+  }
+  .box7 {
+    grid-area: initial;
+  }
+  .box8 {
+    grid-area: initial;
+  }
+  .box9 {
+    grid-area: initial;
+  }
+  .box10 {
+    grid-area: initial;
+  }
+  .box11 {
+    grid-area: initial;
+  }
+  .add-image-box {
+    width: 120px;
+    height: 120px;
+  }
+  .gallery-widget-container {
+    position: initial;
+    transform: none;
+  }
+  .gallery-widget-inner {
+    padding: 24px;
+  }
+  .single-image-widget img {
+    width: 120px;
+    height: 120px;
+  }
+  .gallery-widget-head {
+    padding: 24px;
+    text-align: center;
+  }
+  .gallery-widget-head h2 {
+    font-size: 24px;
+  }
+  .gallery-head-selected-info h2 {
+    font-size: 18px;
+    gap: 8px;
+  }
+  .gallery-head-selected-info h2 img {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .gallery-widget-group {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: initial;
+    gap: 12px;
+    grid-template-areas: initial;
+  }
+  .box1 {
+    grid-area: initial;
+    width: 120px;
+    height: 120px;
+  }
+  .box1 img {
+    width: 120px;
+    height: 120px;
+  }
+  .box2 {
+    grid-area: initial;
+  }
+  .single-image-widget {
+    width: 120px;
+    height: 120px;
+  }
+  .box3 {
+    grid-area: initial;
+  }
+  .box4 {
+    grid-area: initial;
+  }
+  .box5 {
+    grid-area: initial;
+  }
+  .box6 {
+    grid-area: initial;
+  }
+  .box7 {
+    grid-area: initial;
+  }
+  .box8 {
+    grid-area: initial;
+  }
+  .box9 {
+    grid-area: initial;
+  }
+  .box10 {
+    grid-area: initial;
+  }
+  .box11 {
+    grid-area: initial;
+  }
+  .add-image-box {
+    width: 120px;
+    height: 120px;
+  }
+  .gallery-widget-container {
+    position: initial;
+    transform: none;
+  }
+  .gallery-widget-inner {
+    padding: 24px;
+  }
+  .single-image-widget img {
+    width: 120px;
+    height: 120px;
+  }
+  .gallery-widget-head {
+    padding: 24px;
+    text-align: center;
+  }
+  .gallery-widget-head h2 {
+    font-size: 24px;
+  }
+  .gallery-head-selected-info h2 {
+    font-size: 18px;
+    gap: 8px;
+  }
+  .gallery-head-selected-info h2 img {
+    width: 18px;
+    height: 18px;
+  }
+  .gallery-head-selected-info button {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .gallery-widget-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/*============================================================================================
+	End Image Gallery CSS
+==============================================================================================*/
