@@ -128,9 +128,6 @@ const App = () => {
                   onDragOver={(e) => handleDragOver(e, card)}
                   onDragStart={(e) => handleDragStart(e, card)}
                   onDragEnd={handleDragEnd}
-                  onTouchStart={(e) => handleDragStart(e, card)}
-                  onTouchMove={(e) => handleDragOver(e, card)}
-                  onTouchEnd={handleDragEnd}
                   draggable
                 >
                   <img src={card.img} alt="#" />
