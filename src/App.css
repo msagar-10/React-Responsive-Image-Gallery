@@ -21,10 +21,9 @@ body {
 }
 .gallery-widget-head h2 {
   margin: 0;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
 }
-
 .gallery-head-selected-info {
   display: flex;
   align-items: center;
