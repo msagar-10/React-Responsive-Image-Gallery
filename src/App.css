@@ -81,6 +81,7 @@ body {
   position: relative;
   text-align: center;
   cursor: pointer;
+  touch-action: none;
 }
 .single-image-widget img {
   width: 140px;
